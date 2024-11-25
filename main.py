@@ -1,6 +1,4 @@
 calls = 0
-print(calls)
-
 
 def count_calls():
     global calls
@@ -9,11 +7,16 @@ def count_calls():
 
 def string_info(string):
     count_calls()
-    return (len(string), string.upper(), string.lower())
+    length = len(string)
+    upper_case = string.upper()
+    lower_case = string.lower()
+    return (length, upper_case, lower_case)
 
 
 def is_contains(string, list_to_search):
-    return string.upper() in [s.upper() for s in list_to_search]
+    count_calls()
+    string_lower = string.lower()
+    return string_lower in (item.lower() for item in list_to_search)
 
 
 print(string_info('Capybara'))
